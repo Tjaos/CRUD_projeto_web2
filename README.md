@@ -11,10 +11,12 @@
     :construction:  Projeto em construção  :construction:
 </h4>
 
-<h1 align="center"> Armazenar informações de jogos eletrônicos para facilitar a pesquisas </h1>  
+<br>
+
+<h3 align="center"> Armazenar informações de jogos eletrônicos para facilitar a pesquisas </h3>  
 
 
-# Autores
+# Autores:
 
 | [<img src="https://avatars.githubusercontent.com/u/92883620?v=4" width=115><br><sub>Thiago Amaral</sub>](https://github.com/RaulCsar) |  [<img src="https://avatars.githubusercontent.com/u/118937046?v=4" width=115><br><sub>Raul César</sub>](https://github.com/RaulCsar) |  |
 | :---: | :---: | :---: |
