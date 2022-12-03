@@ -18,7 +18,7 @@
 
 # Autores:
 
-| [<img src="https://avatars.githubusercontent.com/u/92883620?v=4" width=115><br><sub>Thiago Amaral</sub>](https://github.com/RaulCsar) |  [<img src="https://avatars.githubusercontent.com/u/118937046?v=4" width=115><br><sub>Raul César</sub>](https://github.com/RaulCsar) |  |
+| [<img src="https://avatars.githubusercontent.com/u/92883620?v=4" width=115><br><sub>Thiago Amaral</sub>](https://github.com/Tjaos) |  [<img src="https://avatars.githubusercontent.com/u/118937046?v=4" width=115><br><sub>Raul César</sub>](https://github.com/RaulCsar) |  |
 | :---: | :---: | :---: |
 
 
