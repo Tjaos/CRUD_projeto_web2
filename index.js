@@ -21,12 +21,12 @@ window.onload = () => {
 
 function trataDados() {
   if (
-    gameInput.value == "" ||
-    producerInput.value == "" ||
-    launchInput.value == "" ||
-    consoleInput.value == ""
+    gameInput.value == "" //||
+    // producerInput.value == "" ||
+    // launchInput.value == "" ||
+    // consoleInput.value == ""
   ) {
-    alert("Por favor, preencher todos os campos!");
+    alert("Por favor, preencher ao menos o nome do game! ");
   } else {
     salvar();
   }

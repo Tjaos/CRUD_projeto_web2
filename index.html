@@ -29,18 +29,17 @@
                         </tbody>
                         
                     </table>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <button type="button" class="btn btn-primary position-fixed" data-bs-toggle="modal" 
-                            data-bs-target="#modalRegistro">Add a Game</button>
-                        </div>  
-                    </div>
-                </div>
             </div>
-            
+                <div class="position-relative">
+                    <div class="col-md-12 position-relative">
+                        <button type="button" class="btn btn-primary position-absolute " data-bs-toggle="modal" 
+                        data-bs-target="#modalRegistro">Add a Game</button>
+                    </div>  
+                </div>
         </div>
+            
+    </div>
         
-   </div>
 <!-- Modal -->
 <div class="modal fade" id="modalRegistro" tabindex="-1" aria-labelledby="modalRegistroLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -72,7 +71,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Launch</label>
-                            <input id="txtLaunch" type="date" class="form-control">
+                            <input id="txtLaunch" type="date" min="1997-01-01" max="2022-12-31" class="form-control">
                         </div>
                     </div>
 
@@ -129,7 +128,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Launch</label>
-                            <input id="editLaunch" type="date" class="form-control">
+                            <input id="editLaunch" type="date" min="1997-01-01" max="2022-12-31" class="form-control">
                         </div>
                     </div>
 
