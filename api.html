@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Busca jogos</title>
+    
+</head>
+<!-- 
+    Key: 827bd4fbd7ff4c289957c6f15f436093
+-->
+<body>
+    <div class="divTitulo">
+        <p class="titulo">Pesquise por um jogo</p>   
+    </div>
+    <div class="pesquisaMain">
+        <div id="pesquisaInput">
+            <input type="text" id="inputText" placeholder="Insira o nome do game. Ex: Mario Kart"><button onclick="buscaJogo()" id="pesquisar" type="submite ">Pesquisar</button>
+            <button class="voltar"><a style="text-decoration: none;" href="index.html">voltar</button>
+        </div>
+    </div>
+
+    <div class="resultado">
+
+    </div>
+
+
+</body>
+<script src="api.js"></script>
+</html>

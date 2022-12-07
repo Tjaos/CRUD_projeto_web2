@@ -187,3 +187,24 @@ function editar(id) {
     }
   });
 }*/
+// key: 827bd4fbd7ff4c289957c6f15f436093
+
+/*
+buscaPokemon();
+
+EXECUTANDO UMA REQUISIÇÃO GET
+function buscaPokemon() {
+  const pokemonUrl = "https://pokeapi.co/api/v2";
+  axios
+    .get(`${pokemonUrl}/pokemon/ditto`)
+    .then(function (response) {
+      //manipula o sucesso da requisição
+      console.log(response);
+    })
+    .catch(function (error) {
+      //manipula erros da requisição
+      console.error(error);
+    });
+}
+buscaPokemon();
+*/
