@@ -3,20 +3,12 @@ const app = express();
 const port = 8081;
 const fs = require("fs");
 const bodyParser = require("body-parser");
+const cors = require("cors");
+app.use(cors());
 let encodedParser = bodyParser.urlencoded({ extended: false });
 
 app.get("/", (req, res) => {
   res.send("<p> Teste</p>");
-});
-app.get("/anunciaItem", (req, res) => {
-  let form = "<form action='/anuncios'method='POST'>";
-  form += "<label>Tipo: </label><input type:'text' name='tipo'><br>";
-  form += "<label>Produto: </label><input type:'text' name='produto'><br>";
-  form += "<label>Descricao: </label><input type:'text' name='descricao'><br>";
-  form += "<label>Preco: </label><input type:'text' name='preco'><br>";
-  form += "<button>Enviar</button>";
-
-  res.send("<div>Anuncie aqui</div><br>" + form);
 });
 
 app.get("/buscaItem", (req, res) => {
@@ -31,8 +23,8 @@ app.get("/buscaItem", (req, res) => {
 });
 
 app.post("/anuncios", encodedParser, (req, res) => {
-  let produto = req.body.produto;
   let tipo = req.body.tipo;
+  let produto = req.body.produto;
   let descricao = req.body.descricao;
   let preco = req.body.preco;
   let novoAnuncio = {
@@ -69,6 +61,7 @@ app.get("/anuncios", (req, res) => {
   fs.readFile("meuBD.json", "utf8", (erro, texto) => {
     if (erro) throw "Deu algum erro: " + erro;
     let meuBD = JSON.parse(texto);
+    console.log(meuBD);
     let anuncios = meuBD.anuncios;
     let filtrado = anuncios.filter(
       (valor) =>
@@ -86,7 +79,7 @@ app.get("/anuncios", (req, res) => {
       resultado += "</a><br>";
     }
 
-    res.send(filtrado);
+    res.json(meuBD);
   });
 });
 
