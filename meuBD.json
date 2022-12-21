@@ -1,1 +1,64 @@
-{"anuncios":[{"tipo":"hardware","produto":"console ps4","descricao":"ps4 seminovo acompanhado por um controle.","preco":"1.500"},{"tipo":"jogos","produto":"conta no lol","descricao":"conta no lol, level 30 com 12 skins e 80k essencias azuis","preco":"70"},{"produto":"conta de jogo","tipo":"software","descricao":"conta no lol level 30","preco":"50"},{"produto":"nintendo ","tipo":"hardware","descricao":"nintendo antigo usado","preco":"100"},{"produto":"nintendo ","tipo":"hardware","descricao":"nintendo antigo usado","preco":"100"},{"produto":"nintendo ","tipo":"hardware","descricao":"nintendo antigo usado","preco":"100"},{"produto":"nintendo ","tipo":"hardware","descricao":"nintendo antigo usado","preco":"100"},{"produto":"nintendo ","tipo":"hardware","descricao":"nintendo antigo usado","preco":"100"},{"produto":"nintendo ","tipo":"hardware","descricao":"nintendo antigo usado","preco":"100"},{"produto":"","tipo":"","descricao":"","preco":""},{"produto":"ps2","tipo":"hardware","descricao":"","preco":"200"}]}
+{
+  "anuncios": [
+    {
+      "categoria": "Console",
+      "produto": "PlayStation 4",
+      "descricao": "PS4 seminovo acompanhado por um controle.",
+      "preco": 1200
+    },
+    {
+      "produto": "Conta do lol",
+      "categoria": "Conta de game",
+      "descricao": "Conta no lol, level 30 com 12 skins e 80k essencias azuis",
+      "preco": 70
+    },
+    {
+      "produto": "conta de jogo",
+      "categoria": "Conta de game",
+      "descricao": "conta no lol level 30",
+      "preco": 50
+    },
+    {
+      "produto": "nintendo ",
+      "categoria": "hardware",
+      "descricao": "nintendo antigo usado",
+      "preco": 100
+    },
+    {
+      "produto": "nintendo ",
+      "categoria": "hardware",
+      "descricao": "nintendo antigo usado",
+      "preco": 100
+    },
+    {
+      "produto": "nintendo ",
+      "categoria": "hardware",
+      "descricao": "nintendo antigo usado",
+      "preco": 100
+    },
+    {
+      "produto": "nintendo ",
+      "categoria": "hardware",
+      "descricao": "nintendo antigo usado",
+      "preco": 100
+    },
+    {
+      "produto": "nintendo ",
+      "categoria": "hardware",
+      "descricao": "nintendo antigo usado",
+      "preco": 100
+    },
+    {
+      "produto": "nintendo ",
+      "categoria": "hardware",
+      "descricao": "nintendo antigo usado",
+      "preco": 100
+    },
+    {
+      "produto": "ps2",
+      "categoria": "hardware",
+      "descricao": "",
+      "preco": 200
+    }
+  ]
+}
