@@ -24,15 +24,18 @@
         margin: auto;
 
     }
-    #mae{
-        margin: auto;
-        transform: translate(-50%, -50);
-        width: 240px;
-        height: 190px;
+    .titulo{
+    width: 100%;
+    padding-left: 50%;
+    transform: translate(-25%);
     }
     fieldset{
+        left: 50%;
+        transform: translate(-50%);
+        position: relative;
         border-radius: 20px;
         background-color: cornflowerblue;
+        width: 400px;
     }
     h3{
         font-size: medium !important;
@@ -57,60 +60,82 @@
         align-items: center;
         
     }
+    .tableAnuncios{
+        width: 80%;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    .tableTd{
+        font-size: 20px;
+        background-color: coral;
+        height: 50px;
+        padding-left: 15px;
+    }
+    .topicosTable{
+        font-size: 20px;
+        padding-left: 15px;
+        padding-right: 15px;
+        height: 20px;
+        
+        background-color: brown;
+    }
 </style>
 <body>
-<div id="divTitulo"><h1 class="titulo">Catálogo de jogos</h1></div>
-    <div style="align-items: center;" id="mae">
-        <fieldset>
-            <form onsubmit="buscaAnuncios(event)">
-                <h3 class="titulo">Busque aqui!</h3>
-                <br>
-                <label  for="categoria">Categoria:</label>
-                <select style="margin-bottom: 10px;" name="categoria" id="categoria">
-                    <option value="0"></option>
-                    <option value="1">Game (jogo)</option>
-                    <option value="2">Console</option>
-                    <option value="3">Conta de game</option>
-                    <option value="4">Periférico</option>
-                    <option value="5">Skin</option>
-                    <option value="6">Item interno</option>
-                    <option value="">Action Figure</option>
-                </select>
-                <br>
-                <label for="produto">Faça uma busca:</label>
-                <input 
-                    type="text" 
-                    name="busca" 
-                    placeholder="Ex: Nome do produto/descrição" 
-                    id="filterProduto"
-                />
-                <!-- <br>
-                <label for="desc">Descrição:</label>
-                <textarea placeholder="Descrição do produto (max 150 caracteres)" maxlength="150" name="desc" id="desc" style="font-family: 'Zen Dots'; margin-bottom: 10px; width: 250; height: 80;"></textarea>  -->
-                <br>
-                <label for="preco">Preço:</label>
-                <input 
-                    placeholder="Apenas números" 
-                    type="text" 
-                    name="preco" 
-                    id="filterPreco"
-                />
-                    <div style="text-align: center; margin-top: 15px; height: min-content;" id="divbtn">
-                        <button style=" margin-right: 15px;" type="submit" >Buscar</button>
-                        <button style=" margin-left: 15px;" type="reset">Limpar</button>
-                    </div>
-                <br>
-            </form>
-        </fieldset>
-    </div>
+<div class="main">
+    <div id="divTitulo"><h1>Catálogo de jogos</h1></div>
+        <div" id="mae">
+            <fieldset class="formBusca">
+                <form onsubmit="buscaAnuncios(event)">
+                    <h3 class="titulo">Busque aqui!</h3>
+                    <br>
+                   <!-- <label  for="categoria">Categoria:</label>
+                    <select style="margin-bottom: 10px;" name="categoria" id="categoria">
+                        <option value="0"></option>
+                        <option value="1">Game (jogo)</option>
+                        <option value="2">Console</option>
+                        <option value="3">Conta de game</option>
+                        <option value="4">Periférico</option>
+                        <option value="5">Skin</option>
+                        <option value="6">Item interno</option>
+                        <option value="">Action Figure</option>
+                    </select>-->
+                    <br>
+                    <label for="produto">Faça uma busca:</label>
+                    <input 
+                        type="text" 
+                        name="busca" 
+                        placeholder="Ex: Nome do produto/descrição" 
+                        id="filterProduto"
+                    />
+                    <!-- <br>
+                    <label for="desc">Descrição:</label>
+                    <textarea placeholder="Descrição do produto (max 150 caracteres)" maxlength="150" name="desc" id="desc" style="font-family: 'Zen Dots'; margin-bottom: 10px; width: 250; height: 80;"></textarea>  -->
+                    <br>
+                    <label for="preco">Preço:</label><br>
+                    <input 
+                        placeholder="Apenas números" 
+                        type="text" 
+                        name="preco" 
+                        id="filterPreco"
+                    />
+                        <div style="text-align: center; margin-top: 15px; height: min-content;" id="divbtn">
+                            <button style=" margin-right: 15px;" type="submit" >Buscar</button>
+                            <button style=" margin-left: 15px;" type="reset">Limpar</button>
+                        </div>
+                    <br>
+                </form>
+            </fieldset>
+        </div>
+
+</div>
     <div class="resultado ">
-        <table class="tableAnuncios table-dark table-striped-collumns position-absolute top-50 start-50">
+        <table class="tableAnuncios table-dark table-striped-collumns position-absolute top-50">
             <thead>
-                <tr>
-                    <th scope="col">Produto</th>
-                    <th scope="col">Categoria</th>
-                    <th scope="col">Descrição</th>
-                    <th scope="col">Preço</th>
+                <tr >
+                    <th class="topicosTable" scope="col">Produto</th>
+                    <th class="topicosTable" scope="col">Categoria</th>
+                    <th class="topicosTable" scope="col">Descrição</th>
+                    <th class="topicosTable" scope="col">Preço</th>
                 </tr>
             </thead>
             <tbody class="tableBody">
@@ -148,9 +173,11 @@
             produtos.map((dado)=>{
 
                 const tableTr = document.createElement("tr");
+            
 
                 Object.keys(dado).forEach((key)=>{
                     const tableTd = document.createElement("td");
+                    tableTd.setAttribute("class", "tableTd")
 
                     tableTd.innerText = dado[key];
                     tableTr.appendChild(tableTd);
