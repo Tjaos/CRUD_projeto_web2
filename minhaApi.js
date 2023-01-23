@@ -7,6 +7,8 @@ const cors = require("cors");
 const data = require("./meuBD.json");
 
 app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 let encodedParser = bodyParser.urlencoded({ extended: false });
 
 app.get("/", (req, res) => {
@@ -23,7 +25,7 @@ app.get("/buscaItem", (req, res) => {
   res.send("<div>Procure o seu produto.</div><br>" + form);
 });
 
-app.post("/anuncios", encodedParser, (req, res) => {
+app.post("/anuncios", (req, res) => {
   let categoria = req.body.categoria;
   let produto = req.body.produto;
   let descricao = req.body.descricao;
@@ -34,6 +36,7 @@ app.post("/anuncios", encodedParser, (req, res) => {
     descricao: descricao,
     preco: preco,
   };
+  console.log("cheguei aqui", req.body);
 
   fs.readFile("meuBD.json", "utf-8", (erro, texto) => {
     if (erro) throw "erro" + erro;
@@ -56,7 +59,6 @@ app.get("/anuncios", (req, res) => {
   /* let categoria = req.query.categoria || "";
     let produto = req.query.produto || "";
     let preco = req.query.preco || "";
-
     fs.readFile("meuBD.json", "utf8", (erro, texto) => {
       if (erro) throw "Deu algum erro: " + erro;
       let meuBD = JSON.parse(texto);
@@ -86,7 +88,6 @@ app.get("/anuncios", (req, res) => {
         resultado += "</p><br>";
         console.log(`Os dados filtrados são: ${resultado}`);
       }
-
       res.json(filtraDados); 
     */
   let input = req.query.busca || "";

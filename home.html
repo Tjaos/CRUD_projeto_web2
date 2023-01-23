@@ -6,14 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
 </head>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P:regular);
+@import url(https://fonts.googleapis.com/css?family=Zen+Dots:regular);
+body{
+    text-align: center;
+    margin: 0 auto;
+    background: rgb(2,0,36);
+    background: linear-gradient(240deg, rgba(2,0,36,1) 0%, rgba(100,149,237,1) 56%, rgba(0,212,255,1) 100%);
+}
+h1{
+    font-family: "Press Start 2P";
+}
+a{
+    background-color: #395487;
+    text-decoration:none;  color: aliceblue;
+    border-radius: 5px;
+    font-family: "Zen Dots";
+}
+a:hover{
+    background-color: rgb(84, 103, 248);
+}
+</style>
 <body>
-    <h1>Tela inicial</h1>
+    <h1>Bem-Vindo!</h1>
 
     <div>
-        <a style="text-decoration:none; background-color: rgb(84, 103, 248); color: aliceblue;"  href="crud.html">Entre no catálogo de jogos!</a>
+        <a href="crud.html">Entre no catálogo de jogos!</a>
         <br> <br> <br>
-        <a style="text-decoration:none; background-color: rgb(84, 103, 248); color: aliceblue;" href="http://localhost:8081/anuncios">Negocie aqui!</a>
-       
+        <a href="busca.html">Busca Rápida</a>
+        <br> <br> <br>
+        <a href="inserirAnuncio.html">Negocie aqui!</a>
     </div>
 </body>
 </html>

@@ -4,50 +4,199 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>teste de form</title>
+    <title>Busca</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" 
+        rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" 
+        crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
-<body>
-    <div style="align-items: center;" id="mae">
-        <fieldset style="text-align: center; width: min-content;">
-            <form action="buscaAnuncios">
-                <legend class="titulo">Busque aqui!</legend>
-                <br>
-                <label  for="categoria">Categoria:</label>
-                <select name="categoria" id="categoria">
-                    <option id="buscaGame" value="1">Game(jogo)</option>
-                    <option id="buscaConsole" value="2">Console</option>
-                    <option id="buscaConta" value="3">Conta de game</option>
-                    <option id="buscaPerifericos" value="4">Periférico</option>
-                </select>
-                
-                <br>
-                <label for="produto">Produto:</label>
-                <input type="text" name="produto" placeholder="" id="produto">
-                <br>
-                <label for="desc">Descrição:</label>
-                <textarea name="desc" id="desc" cols="21" rows="1"></textarea> 
-                <br>
-                <label for="preco">Preço:</label>
-                <input type="text" name="preco" id="preco">
-                <button type="submit">Enviar</button>
+<style>
+    #divTitulo{
+        border-radius: 15px;
+        background-color: #6495ed;
+        width: fit-content;
+        margin: auto;
 
-                <br>
-            </form>
-        </fieldset>
+    }
+    .titulo{
+    width: 100%;
+    padding-left: 50%;
+    transform: translate(-25%);
+    margin-bottom: 10px;
+    }
+    h1{
+        font-family: "Press Start 2P";
+    font-size: 35px;
+    
+    }
+    fieldset{
+        left: 50%;
+        transform: translate(-50%);
+        position: relative;
+        border-radius: 20px;
+        background-color: cornflowerblue;
+        width: 400px;
+    }
+    h3{
+        font-size: medium !important;
+    }
+    label{
+        margin-left: 16px;
+        margin-top: 0px;
+        font-family: "Zen Dots";
+    }
+    input{
+        font-size: small;
+        margin-left: 15px;
+        margin-bottom: 10px;
+        font-family: "Zen Dots";
+    }
+    button{
+        border-radius: 15px; border: none;
+        background-color: #3767FF;
+        
+    
+    }
+    button:hover{
+        background-color: #1950FF;
+        cursor: pointer;
+    }
+    #resultado{
+
+        position: relative;
+        align-items: center;
+
+    }
+    .tableAnuncios{
+        
+        width: 80%;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    .tableTd{
+        font-family: "Zen Dots";
+        font-size: 15px;
+        background-color: #395487;
+        height: 50px;
+        padding-left: 15px;
+    }
+    .topicosTable{
+        font-family: "Press Start 2P";
+        font-size: 20px;
+        padding-left: 15px;
+        padding-right: 15px;
+        height: 20px;
+        background-color: #19253B;
+    }
+</style>
+<body>
+<div class="main">
+    <div id="divTitulo"><h1>Catálogo de jogos</h1></div>
+        <div" id="mae">
+        <button><a style="color: black;" href="home.html">Voltar</a></button>
+            <fieldset class="formBusca">
+                <form onsubmit="buscaAnuncios(event)">
+                    <h3 class="titulo">Busque aqui!</h3>
+                   <!-- <label  for="categoria">Categoria:</label>
+                    <select style="margin-bottom: 10px;" name="categoria" id="categoria">
+                        <option value="0"></option>
+                        <option value="1">Game (jogo)</option>
+                        <option value="2">Console</option>
+                        <option value="3">Conta de game</option>
+                        <option value="4">Periférico</option>
+                        <option value="5">Skin</option>
+                        <option value="6">Item interno</option>
+                        <option value="">Action Figure</option>
+                    </select>-->
+                    <br>
+                    <label for="filterProduto">Faça uma busca:</label>
+                    <input 
+                        type="text" 
+                        name="busca" 
+                        placeholder="Título, descrição etc..." 
+                        id="filterProduto"
+                    />
+                    <!-- <br>
+                    <label for="desc">Descrição:</label>
+                    <textarea placeholder="Descrição do produto (max 150 caracteres)" maxlength="150" name="desc" id="desc" style="font-family: 'Zen Dots'; margin-bottom: 10px; width: 250; height: 80;"></textarea>  -->
+                    <br>
+                    <label for="filterPreco">Preço (R$):</label><br>
+                    <input 
+                        placeholder="Apenas números" 
+                        type="text" 
+                        name="preco" 
+                        id="filterPreco"
+                    />
+                        <div style="text-align: center; margin-top: 15px; height: min-content;" id="divbtn">
+                            <button style=" margin-right: 15px;" type="submit" >Buscar</button>
+                            <button style=" margin-left: 15px;" type="reset">Limpar</button>
+                        </div>
+                    <br>
+                </form>
+            </fieldset>
+        </div>
+
+</div>
+    <div class="resultado ">
+        <table class="tableAnuncios table-dark table-striped-collumns position-absolute top-50">
+            <thead>
+                <tr >
+                    <th style="border-radius: 15px 0px 0px 0px;" class="topicosTable" scope="col">Produto</th>
+                    <th class="topicosTable" scope="col">Categoria</th>
+                    <th class="topicosTable" scope="col">Descrição</th>
+                    <th style="border-radius: 0px 15px 0px 0px;" class="topicosTable" scope="col">Preço</th>
+                </tr>
+            </thead>
+            <tbody class="tableBody">
+                
+            </tbody>
+            
+        </table>
     </div>
 
     <script>
-        async function buscaAnuncios(){
-           await axios.get("http://localhost:8081/anuncios")
+         let produtos = [];
+        async function buscaAnuncios(event){
+            event.preventDefault();
+            produtos=[];
+            let buscaProduto = document.getElementById("filterProduto");
+            let buscaPreco = document.getElementById("filterPreco");
+
+            console.log('before request: ', produtos)
+           await axios.get(`http://localhost:8081/anuncios?busca=${buscaProduto.value}&preco=${buscaPreco.value}`)
             .then((response)=>{
-                console.log(response)
+                produtos = response.data;
+            console.log('after request: ', produtos)
+
+                console.log(response.data)
+                resultado()
             })
-            .catch((erro)=>console.error(erro))
+            .catch((erro)=>console.error(erro)).finally(()=>buscaProduto.value = "")
         }
-        buscaAnuncios()
-        console.log("rola")
+        function resultado(){
+            console.log('mount: ', produtos)
+
+            const tableBody = document.querySelector(".tableBody");
+            tableBody.innerHTML = ''
+
+            produtos.map((dado)=>{
+
+                const tableTr = document.createElement("tr");
+            
+
+                Object.keys(dado).forEach((key)=>{
+                    const tableTd = document.createElement("td");
+                    tableTd.setAttribute("class", "tableTd")
+
+                    tableTd.innerText = dado[key];
+                    tableTr.appendChild(tableTd);
+                    tableBody.appendChild(tableTr);
+                })
+            })
+
+        }
+
     </script>
 </body>
 </html>
